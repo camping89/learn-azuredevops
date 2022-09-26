@@ -1,3 +1,4 @@
+using learn_azuredevops.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace learn_azuredevops.Controllers;
@@ -17,8 +18,8 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpGet("GetWeatherForecast")]
+    public IEnumerable<WeatherForecast> GetWeatherForecast()
     {
         return Enumerable.Range(1, 5)
                          .Select(index => new WeatherForecast
@@ -28,5 +29,26 @@ public class WeatherForecastController : ControllerBase
                               Summary      = Summaries[Random.Shared.Next(Summaries.Length)]
                           })
                          .ToArray();
+    }
+
+    [HttpGet("GetRandomCustomers")]
+    public IEnumerable<Customer> GetRandomCustomers()
+    {
+        return Enumerable.Range(1, 5)
+                         .Select(i =>
+                          {
+                              var firstName = Faker.Name.First();
+                              var lastName  = Faker.Name.Last();
+
+                              return new Customer
+                              {
+                                  Id          = Guid.NewGuid().ToString(),
+                                  FirstName   = firstName,
+                                  LastName    = lastName,
+                                  Address     = Faker.Address.StreetAddress(true),
+                                  Email       = Faker.Internet.Email($"{firstName}.{lastName}"),
+                                  PhoneNumber = Faker.Phone.Number()
+                              };
+                          });
     }
 }
