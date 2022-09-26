@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn-azuredevops", "learn-azuredevops\learn-azuredevops.csproj", "{70610843-DE20-45C3-B2B2-53D06BD96BBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70610843-DE20-45C3-B2B2-53D06BD96BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70610843-DE20-45C3-B2B2-53D06BD96BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70610843-DE20-45C3-B2B2-53D06BD96BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70610843-DE20-45C3-B2B2-53D06BD96BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
